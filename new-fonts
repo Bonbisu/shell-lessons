@@ -1,0 +1,6 @@
+# to install new fonts available to currently user
+# put font.ttf on home/.fonts and runs
+# fc-cache -f -v
+
+cp ~/Downloads/*.ttf ~/.fonts
+fc-cache -f -v
