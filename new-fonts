@@ -1,0 +1,10 @@
+# to install new fonts available to currently user
+# put font.ttf on home/.fonts
+
+# to install to all users put new fonts on
+# /usr/share/fonts/<some directory if wants>
+
+# Then, run # fc-cache -f -v to update the font list
+
+cp ~/Downloads/*.ttf ~/.fonts
+fc-cache -f -v
