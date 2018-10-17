@@ -1,0 +1,6 @@
+[org/gnome/login-screen]
+
+disable-user-list=true
+
+# put this file at /etc/dconf/db/gdm.d(or similar)
+# after save, run # dconf update
