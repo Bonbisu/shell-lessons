@@ -2,7 +2,7 @@
 
 COUNT=10
 
-while (( COUNT > 0))
+until (( COUNT == 0 ))
 
 do 
 	echo -e "$COUNT \c"
@@ -11,3 +11,4 @@ do
 done
 
 echo -e "\n FIRE!!"
+
