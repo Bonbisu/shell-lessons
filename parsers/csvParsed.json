@@ -1,0 +1,36 @@
+{
+"Name": "drill" 
+"Price": 99 
+"Quantity" : 5 
+}
+
+{
+"Name": "hammer" 
+"Price": 10 
+"Quantity" : 50 
+}
+
+{
+"Name": "brush" 
+"Price": 5 
+"Quantity" : 100 
+}
+
+{
+"Name": "lamp" 
+"Price": 25 
+"Quantity" : 30 
+}
+
+{
+"Name": "screwdriver" 
+"Price": 5 
+"Quantity" : 23 
+}
+
+{
+"Name": "table-saw" 
+"Price": 1099 
+"Quantity" : 3 
+}
+
