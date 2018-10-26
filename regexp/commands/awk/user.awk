@@ -5,7 +5,7 @@ BEGIN { FS=":"; print "Username,Shell"}
 # -F especify the delimiter, now ":". To insert a delimiter
 # inside a control file, just insert inside a BEGIN tag
 # FS="<delimiter>", in this case FS=":"
-$3 > 999 { print $1"@"$7; count++}
+/^s/{ print $1"@"$7; count++}
 # $3 > 999 means, select only lines that the 3rd field (user ID)
 # is greater than 999 (in debian based, common user
 # ussually starts at 1000)

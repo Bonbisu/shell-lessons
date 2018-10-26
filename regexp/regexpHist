@@ -1,1 +1,2 @@
-# validating ssn \b[0-9]{3}-[0-9]{2}-[0-9]{4}\b
+# validating ssn >> \b[0-9]{3}-[0-9]{2}-[0-9]{4}\b
+# substitute any word / charactere before '{' to /^s/ >>  s/^[^{]*/\/^s\/  
