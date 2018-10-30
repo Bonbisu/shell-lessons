@@ -9,4 +9,3 @@
 
 
 Testing a git fetch and merge
-reconfig git, now testing
