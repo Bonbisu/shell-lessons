@@ -270,6 +270,140 @@ do  # code block begin
 done
 ```
 
+Another `for-loop` using an output from a command:
+
+```sh
+#!/bin/bash
+
+for file in $(ls) # <-- taking an output from ls
+do
+    [ ! -f $file ] && continue # <-- if not a file, continue
+    LA=$(stata -c %x $file | cut -d " " -f1) # <-- extract some data from files
+    echo "$file is $(du -b $file) bytes and was last accessed on $LA" # <-- print the data extracted
+done # <-- end of block
+```
+
+- while:
+
+```sh
+#!/bin/bash
+COUNT=10
+
+while(( COUNT > 0 ))
+do
+    echo -e "$COUNT \c"
+    sleep 1
+    (( COUNT -- ))
+done
+
+echo -e "\nFIRE!!!"
+```
+
+- until:
+
+Are oposite from while logic:
+
+```sh
+#!/bin/bash
+COUNT=10
+
+until (( COUNT = 0)) # <-- do until get this value
+do
+    echo -e "$COUNT \c"
+    sleep 1
+    (( COUNT -- ))
+done
+
+echo -e "\nFIRE!!!"
+```
+
+#### X11 Environment in Linux - X Server
+
+It's our graphical environment in Linux Desktops and in some Servers. 
+
+> Making a Linux a little more Windows - In Simple Terms
+
+In Linux, the GUI starts automatically in runlevel 5 (`graphical.target` in systemd as initialization daemon). From runlevel 3, starts text only environment(`multi-user.target`) started with `startx`.
+
+We can know what _initialization daemon_ is running on our system with teh command:
+
+```sh
+ps -l 1 # long list the process with ID 1
+```
+
+If the _CMD_ name begin with `system`, the deamon is `systemd`. Another traditional environment daemon is `init`.
+
+Once _X Server_ is running the _X Client_ can connect to create the _GUI_.
+
+Then _Display Manager (DM)_  provides login screen and _Window Manager (DE)_ provides _desktop environment_.
+
+##### Window Managers - Desktop Environment (DE)
+Are the graphical environment of Linux. Can manage windows, panels, menus, etc.
+
+- Gnome
+- KDE
+- LXDE
+- XFCE
+
+##### Display Managers
+
+Allow us to _logon_ in Linux.
+
+- GDM - Gnome Display Manager
+- KDM - KDE Display Manager
+- XDM - X Display Manager (LXDE)
+
+##### xorg.conf
+
+The main configuration file for the GUI of Linux are made through xorg files:
+
+```py
+/etc/X11/xorg.conf
+or
+/etc/X11/xorg.conf.d # do not edit these files by hand
+```
+
+To know what is the default level of our _environment_ we can simply use the comand:
+
+```sh
+systemctl get-default # usually: graphical.target
+```
+
+We can also list all targets or runlevels on our Linux Machine:
+
+```sh
+systemctl list-units --type target
+```
+
+To set another default runlevel to boot:
+
+```sh
+# as root user
+systemctl set-default multi-user.target # set runlevel 3 as default
+```
+
+It changes links between targets. To use GUI again, we can login through command line and use `startx` to initialize the GUI, or we can change again our default to `graphical-target` or runlevel 5.
+
+
+##### fonts
+
+Is where we install (add) fonts on Linux systems.
+
+##### xwininfo
+
+Display informations about some windows in our _Graphical Environment_.
+
+##### xdpyinfo
+
+More information about teh whole display environment and hardware.
+
+
+##### Accessibility
+
+
+
+
+
 ###### **Notes**:
 
 - Parentheses are used to test integer/numerical values.
